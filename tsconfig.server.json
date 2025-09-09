@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "outDir": "build-server"
+  },
+  "include": ["server/**/*"]
+}
