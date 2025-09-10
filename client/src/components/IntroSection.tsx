@@ -16,7 +16,7 @@ export default function IntroSection() {
     const interval = setInterval(() => {
       setFade(false) // start fade-out
 
-      // wait 300ms then change phrase and fade-in
+      // wait 1000ms then change phrase and fade-in
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % phrases.length)
         setFade(true)
@@ -49,7 +49,7 @@ export default function IntroSection() {
           SWEET MAGNOLIA <br /> CAKERY
         </h1>
 
-        {/* ✨ Rotating subtitle with fade */}
+        {/* Rotating subtitle with fade */}
         <div className="mt-4 min-h-[2.5rem]">
           <p
             className={`text-lg sm:text-xl italic text-[#e3a283] transition-opacity duration-1000 ${

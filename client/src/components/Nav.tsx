@@ -1,18 +1,14 @@
 import React from 'react'
 
-/**
- * STEP 2: Match custom design layout (no announcement bar, simplified nav).
- * Reference: "Sweet Magnolia Cakery" screenshot
- */
-
 export default function Navbar() {
   return (
-    <header className="bg-[#f5f2eb] shadow-sm">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-0">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#f8f6f2]/90 backdrop-blur-sm shadow-sm">
+      {/* reduced vertical padding */}
+      <div className="w-full px-8 py-1.5">
         <div className="flex items-center justify-between">
           {/* LOGO */}
           <div className="flex items-center">
-            <img src="/logo.png" alt="Sweet Magnolia Cakery Logo" className="h-32 w-auto" />
+            <img src="/logo.png" alt="Sweet Magnolia Cakery Logo" className="h-28 w-auto" />
 
           </div>
 
@@ -20,7 +16,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-10 text-[17px] text-[#3a4a3f]">
             <a href="#" className="hover:text-[#7e9b7d]">Home</a>
             <a href="#" className="hover:text-[#7e9b7d]">About</a>
-            <a href="#" className="hover:text-[#7e9b7d]">Cakes</a>
+            <a href="#" className="hover:text-[#7e9b7d]">Shop</a>
             <a href="#" className="hover:text-[#7e9b7d]">Contact</a>
           </nav>
 
