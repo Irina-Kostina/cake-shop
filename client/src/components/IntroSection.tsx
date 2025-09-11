@@ -28,7 +28,7 @@ export default function IntroSection() {
 
 
   return (
-    <section className="relative bg-gradient-to-b from-neutral-50 to-white py-16 sm:py-20">
+    <section id="home" className="relative bg-gradient-to-b from-neutral-50 to-white py-16 sm:py-20">
       {/* Background subtle dots pattern */}
       <div className="absolute inset-0 flex justify-center overflow-hidden pointer-events-none">
         <div className="w-full max-w-6xl">

@@ -1,6 +1,6 @@
 export default function AboutUs() {
   return (
-    <section className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-22">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left: Heading + paragraphs */}
         <div>
@@ -8,7 +8,7 @@ export default function AboutUs() {
             Our Blooming Story
           </h2>
 
-          <div className="space-y-6 text-[#456654] text-lg leading-relaxed">
+          <div className="space-y-6 text-[#456654] text-lg leading-relaxed text-justify">
             <p>
               Welcome to Sweet Magnolia Cakery, where the delicate beauty of
               magnolia blossoms meets the artistry of fine baking. Like the
