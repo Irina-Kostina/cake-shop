@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+
 
 /** Shape of a cake item shown on the grid */
 type Cake = {
@@ -53,37 +55,39 @@ export default function FavouritesSection() {
         .filter((cake) => favouriteIds.includes(cake.id))
         .map((cake) => (
           <li key={cake.id}>
-            <div className="group h-full rounded-2xl bg-white/90 ring-1 ring-[#cfd8cf] shadow-sm hover:shadow-md transition-shadow">
-              {/* Image */}
-              <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[4/3]">
-                <img
-                  src={cake.image}
-                  alt={cake.name}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
+            <Link to={`/cakes/${cake.id}`}>
+              <div className="group h-full rounded-2xl bg-white/90 ring-1 ring-[#cfd8cf] shadow-sm hover:shadow-md transition-shadow">
+                {/* Image */}
+                <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[4/3]">
+                  <img
+                    src={cake.image}
+                    alt={cake.name}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-medium text-neutral-900 leading-snug">
+                    {cake.name}
+                  </h3>
+
+                  {/* From price line – muted like screenshot #1 */}
+                  <p className="mt-1 text-sm text-neutral-500">
+                    From <span className="font-semibold">${cake.price}</span>
+                  </p>
+
+                  {/* Add/Order button – peach bubble like your navbar cart */}
+                  <button
+                    onClick={() => alert(`Added: ${cake.name}`)}
+                    className="mt-5 w-full rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white font-medium py-2.5 shadow-[0_6px_20px_rgba(227,162,131,0.35)] hover:shadow-[0_10px_26px_rgba(227,162,131,0.45)] transition-shadow"
+                  >
+                    Select &amp; Add to Cart
+                  </button>
+                </div>
               </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-5">
-                <h3 className="font-medium text-neutral-900 leading-snug">
-                  {cake.name}
-                </h3>
-
-                {/* From price line – muted like screenshot #1 */}
-                <p className="mt-1 text-sm text-neutral-500">
-                  From <span className="font-semibold">${cake.price}</span>
-                </p>
-
-                {/* Add/Order button – peach bubble like your navbar cart */}
-                <button
-                  onClick={() => alert(`Added: ${cake.name}`)}
-                  className="mt-5 w-full rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white font-medium py-2.5 shadow-[0_6px_20px_rgba(227,162,131,0.35)] hover:shadow-[0_10px_26px_rgba(227,162,131,0.45)] transition-shadow"
-                >
-                  Select &amp; Add to Cart
-                </button>
-              </div>
-            </div>
+            </Link>  
           </li>
         ))}
       </ul>

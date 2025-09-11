@@ -48,9 +48,19 @@ const cakes = [
 ]
 
 
-
+// All cakes
 router.get('/', (_req, res) => {
   res.json(cakes)
+})
+
+//Cake by id 
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  const cake = cakes.find((c) => c.id === id)
+  if (!cake) {
+    return res.status(404).json({ error: 'Cake not found' })
+  }
+  res.json(cake)   // single cake
 })
 
 export default router

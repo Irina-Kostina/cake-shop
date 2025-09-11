@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 type Cake = {
   id: number
@@ -15,7 +16,7 @@ export default function ShopPage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch('/api/cakes') // Proxy handles this in dev
+        const res = await fetch('/api/cakes') 
         if (!res.ok) throw new Error(`HTTP error ${res.status}`)
         const data = await res.json()
         setCakes(data)
@@ -55,17 +56,20 @@ export default function ShopPage() {
             key={cake.id}
             className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col items-center"
           >
-            <img
-              src={cake.image}
-              alt={cake.name}
-              className="w-full h-48 object-cover rounded-md mb-4"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.src = '/cakes/default.png' // fallback if image missing
-              }}
-            />
-            <h2 className="text-xl font-semibold text-[#6a8a6a]">{cake.name}</h2>
-            <p className="text-gray-700 mt-1">${cake.price.toFixed(2)}</p>
+            <Link to={`/cakes/${cake.id}`} className="w-full text-center aspect-[4/3] overflow-hidden">
+              <img
+                src={cake.image}
+                alt={cake.name}
+                className="w-full h-48 object-cover rounded-md mb-4"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.src = '/cakes/default.png' // fallback if image missing
+                }}
+              />
+              <h2 className="text-xl font-semibold text-[#6a8a6a]">{cake.name}</h2>
+              <p className="text-gray-700 mt-1">${cake.price.toFixed(2)}</p>
+            </Link>
+            
             <button className="mt-4 px-4 py-2 bg-[#6a8a6a] text-white rounded-lg hover:bg-[#5a795a] transition">
               Add to Cart
             </button>
