@@ -58,11 +58,11 @@ export default function FavouritesSection() {
             <Link to={`/cakes/${cake.id}`}>
               <div className="group h-full rounded-2xl bg-white/90 ring-1 ring-[#cfd8cf] shadow-sm hover:shadow-md transition-shadow">
                 {/* Image */}
-                <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[4/3]">
+                <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[5/5]">
                   <img
                     src={cake.image}
                     alt={cake.name}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02] bg-white"
                     loading="lazy"
                   />
                 </div>

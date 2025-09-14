@@ -7,7 +7,7 @@ const cakes = [
     id: 1,
     name: 'Vanilla Magnolia',
     price: 59,
-    image: '/cakes/chocolate_cake.png',
+    image: '/cakes/strawberry-chocolate.jpg',
   },
   {
     id: 2,

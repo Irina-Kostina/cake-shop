@@ -32,7 +32,7 @@ export default function ShopPage() {
 
   if (loading) {
     return (
-      <section className="max-w-6xl mx-auto px-4 py-12 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
         <p className="text-lg text-gray-600">Loading cakes...</p>
       </section>
     )
@@ -40,42 +40,62 @@ export default function ShopPage() {
 
   if (error) {
     return (
-      <section className="max-w-6xl mx-auto px-4 py-12 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 text-center">
         <p className="text-red-600 text-lg">Error: {error}</p>
       </section>
     )
   }
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-[#6a8a6a] mb-8">All Cakes</h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {cakes.map((cake) => (
-          <div
-            key={cake.id}
-            className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col items-center"
-          >
-            <Link to={`/cakes/${cake.id}`} className="w-full text-center aspect-[4/3] overflow-hidden">
-              <img
-                src={cake.image}
-                alt={cake.name}
-                className="w-full h-48 object-cover rounded-md mb-4"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = '/cakes/default.png' // fallback if image missing
-                }}
-              />
-              <h2 className="text-xl font-semibold text-[#6a8a6a]">{cake.name}</h2>
-              <p className="text-gray-700 mt-1">${cake.price.toFixed(2)}</p>
-            </Link>
-            
-            <button className="mt-4 px-4 py-2 bg-[#6a8a6a] text-white rounded-lg hover:bg-[#5a795a] transition">
-              Add to Cart
-            </button>
-          </div>
-        ))}
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-14">
+      {/* Heading – styled same way */}
+      <div className="text-center mb-8 sm:mb-12">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#6a8a6a] tracking-wide">
+          All Cakes
+        </h1>
       </div>
+
+      {/* Grid of cards – same as favourites */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {cakes.map((cake) => (
+          <li key={cake.id}>
+            <Link to={`/cakes/${cake.id}`}>
+              <div className="group h-full rounded-2xl bg-white/90 ring-1 ring-[#cfd8cf] shadow-sm hover:shadow-md transition-shadow">
+                
+                {/* Image – identical */}
+                <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[5/5]">
+                  <img
+                    src={cake.image}
+                    alt={cake.name}
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02] bg-white"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = '/cakes/default.png'
+                    }}
+                  />
+                </div>
+
+                {/* Content – identical */}
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-medium text-neutral-900 leading-snug">
+                    {cake.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-neutral-500">
+                    From <span className="font-semibold">${cake.price}</span>
+                  </p>
+
+                  <button
+                    onClick={() => alert(`Added: ${cake.name}`)}
+                    className="mt-5 w-full rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white font-medium py-2.5 shadow-[0_6px_20px_rgba(227,162,131,0.35)] hover:shadow-[0_10px_26px_rgba(227,162,131,0.45)] transition-shadow"
+                  >
+                    Select &amp; Add to Cart
+                  </button>
+                </div>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
