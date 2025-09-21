@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from './pages/CartContext'
 
 export default function Navbar() {
+  const { cart } = useCart()
+  
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#f8f6f2]/90 backdrop-blur-sm shadow-sm">
       {/* reduced vertical padding */}
@@ -22,10 +25,23 @@ export default function Navbar() {
           </nav>
 
           {/* CART BUTTON */}
-          <a href="#cart" className="relative flex flex-col items-center justify-center bg-[#f2ac8c] text-white rounded-full px-6 py-3 shadow-md hover:brightness-105">
+          {/* <a href="#cart" className="relative flex flex-col items-center justify-center bg-[#f2ac8c] text-white rounded-full px-6 py-3 shadow-md hover:brightness-105">
             <span className="font-semibold leading-none">Cart</span>
             <span className="text-xs bg-[#7e9b7d] text-white rounded-full px-2 py-0.5 mt-1">0</span>
-          </a>
+          </a> */}
+          <Link
+            to="/cart"
+            className="relative flex items-center px-3 py-1 rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white shadow hover:shadow-md transition"
+          >
+            <span>Cart</span>
+
+            {/* Badge */}
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 rounded-full bg-red-500 text-white text-xs font-bold shadow">
+                {cart.length}
+              </span>
+            )}
+          </Link>
         </div>
       </div>
     </header>
