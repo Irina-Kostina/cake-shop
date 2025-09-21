@@ -12,7 +12,12 @@ html, body, #root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  
 }
+/* body {
+  background: linear-gradient(135deg, #35c635, #ba582a);
+} */
+
 
 /* 
   color-scheme: light dark;

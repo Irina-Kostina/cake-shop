@@ -81,8 +81,8 @@ export default function CakeDetailsPage() {
         <span>›</span>
         <Link to="/shop" className="hover:underline">Shop</Link>
         <span>›</span>
-        <span className="font-semibold">{cake.category}</span>
-        <span>›</span>
+        {/* <span className="font-semibold">{cake.category}</span>
+        <span>›</span> */}
         <span className="font-semibold">{cake.name}</span>
       </nav>
 

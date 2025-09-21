@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react"
+import { createContext, useContext, useState, useEffect, ReactNode } from "react"
 
 type CartItem = {
   id: number
@@ -20,11 +20,19 @@ type CartContextType = {
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([])
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    // ✅ Load from localStorage on first render
+    const saved = localStorage.getItem("cart")
+    return saved ? JSON.parse(saved) : []
+  })
+
+  // ✅ Save to localStorage whenever cart changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
 
   function addToCart(item: CartItem) {
     setCart((prev) => {
-      // check if item (same cake + same size) already exists
       const existing = prev.find(
         (c) => c.slug === item.slug && c.size === item.size
       )

@@ -237,6 +237,7 @@ router.get('/', (_req, res) => {
     category: c.category,
     price: c.price,               // “From $X” on cards
     rating: c.rating,
+    sizes: c.sizes,
   }))
   res.json(list)
 })
