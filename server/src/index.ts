@@ -16,12 +16,6 @@ app.use(express.json())
 // Routes
 app.use('/api/cakes', cakesRouter)
 
-// Serve React static files (in production)
-// const distPath = path.resolve(__dirname, '../../dist')
-// app.use(express.static(distPath))
-// app.get('*', (_req, res) => {
-//   res.sendFile(path.join(distPath, 'index.html'))
-// })
 
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`)

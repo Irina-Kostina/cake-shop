@@ -4,12 +4,13 @@ import { useEffect, useState } from "react"
 type Cake = {
   id: number
   name: string
+  slug: string
   price: number
   image: string
 }
 
 export default function CakeDetailsPage() {
-  const { id } = useParams<{ id: string }>()
+  const { slug } = useParams<{ slug: string }>()
   const [cake, setCake] = useState<Cake | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -17,7 +18,7 @@ export default function CakeDetailsPage() {
   useEffect(() => {
     async function fetchCake() {
       try {
-        const res = await fetch(`/api/cakes/${id}`)
+        const res = await fetch(`/api/cakes/${slug}`)
         if (!res.ok) throw new Error("Cake not found")
         const data = await res.json()
         setCake(data)
@@ -28,7 +29,7 @@ export default function CakeDetailsPage() {
       }
     }
     fetchCake()
-  }, [id])
+  }, [slug])
 
   if (loading) return <p className="p-6">Loading...</p>
   if (error) return <p className="p-6 text-red-500">{error}</p>

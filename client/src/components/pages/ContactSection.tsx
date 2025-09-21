@@ -12,7 +12,7 @@ export default function ContactSection() {
             We’d love to hear from you!
           </p>
           <ul className="space-y-3 text-zinc-800">
-            <li><strong>Phone:</strong> (09) 123 4567</li>
+            <li><strong>Phone:</strong>  +64 21 123 4567</li>
             <li><strong>Email:</strong> hello@sweetmagnolia.co.nz</li>
             <li><strong>Address:</strong> 123 Magnolia Lane, Auckland, NZ</li>
           </ul>

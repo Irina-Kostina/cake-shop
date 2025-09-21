@@ -5,6 +5,7 @@ import FavouritesSection from "./components/FavouritesSection"
 import AboutUs from "./components/AboutUs"
 import ProductsSection from './components/pages/ProductsSection'
 import ContactSection from './components/pages/ContactSection'
+import Footer from './components/Footer'
 
 
 
@@ -17,12 +18,15 @@ export default function App() {
       <div className="pt-28">
         {location.pathname === '/' && (
           <>
+            <div>
             <IntroSection />
             <FavouritesSection />
             <AboutUs />
             <ProductsSection />
 
             <ContactSection />
+            </div>
+            <Footer />
           </>
         )}
         <main className="w-full px-8 py-6">
