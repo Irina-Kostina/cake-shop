@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 type Cake = {
@@ -37,6 +37,15 @@ export default function CakeDetailsPage() {
 
   return (
     <section className="max-w-3xl mx-auto px-4 py-12 text-center">
+      {/* ✅ Breadcrumb menu */}
+      <nav className="text-sm text-gray-800 mb-6 flex items-center gap-2">
+        <Link to="/" className="hover:underline">Cakery Auckland</Link>
+        <span>›</span>
+        <Link to="/shop" className="hover:underline">Shop</Link>
+        <span>›</span>
+        <span className="font-semibold">{cake.name}</span>
+      </nav>
+
       <img
         src={cake.image}
         alt={cake.name}
