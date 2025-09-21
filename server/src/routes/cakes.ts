@@ -5,9 +5,9 @@ const router = Router()
 const cakes = [
   {
     id: 1,
-    name: 'Vanilla Magnolia',
-    price: 59,
-    image: '/cakes/strawberry-chocolate.jpg',
+    name: 'Mango Delight',
+    price: 68,
+    image: '/cakes/mango_cake.png',
   },
   {
     id: 2,
@@ -21,29 +21,53 @@ const cakes = [
     price: 72,
     image: '/cakes/coffee_cake.png',
   },
-  {
+   {
     id: 4,
+    name: 'Lavender Whisper',
+    price: 65,
+    image: '/cakes/lavander.png',
+  },
+  {
+    id: 5,
     name: 'Honey Blossom',
     price: 65,
     image: '/cakes/honey_cake.png',
   },
   {
-    id: 5,
-    name: 'Mango Delight',
-    price: 68,
-    image: '/cakes/mango_cake.png',
+    id: 6,
+    name: 'Vanilla Citrus Symphony',
+    price: 59,
+    image: '/cakes/vanilla.png',
   },
   {
-    id: 6,
+    id: 7,
     name: 'Tiramisu Temptation',
     price: 75,
     image: '/cakes/tiramisu_cake.png',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Ube Velvet',
     price: 70,
     image: '/cakes/ube_cake.png',
+  },
+  {
+    id: 9,
+    name: 'Chocolate Flower',
+    price: 65,
+    image: '/cakes/chocolate.png',
+  },
+  {
+    id: 10,
+    name: 'Velvet Oreo Bliss',
+    price: 70,
+    image: '/cakes/oreo.png',
+  },
+  {
+    id: 11,
+    name: 'Green Harmony',
+    price: 70,
+    image: '/cakes/matcha.png',
   },
 ]
 
