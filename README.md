@@ -1,69 +1,119 @@
-# React + TypeScript + Vite
+# 🍰 Sweet Magnolia Cakery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack e-commerce web application for a botanical-inspired cake shop.  
+Built with **React, TypeScript, Node.js, Express, and TailwindCSS**.  
 
-Currently, two official plugins are available:
+This project was developed as part of my software development studies to demonstrate skills in **frontend design, backend API development, and user experience design**.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- Shop page – Browse cakes in a responsive grid layout.  
+- Cake details – Each cake includes image, description, size options, and add-to-cart functionality.  
+- Cart page – Add, remove, and update cake quantities with subtotal and total cost calculation.  
+- Favourites section – Save cakes to favourites for quick access.  
+- Responsive design – Optimised for desktop, tablet, and mobile.  
+- Custom styling – Botanical colour palette (sage green, peach, cream) with serif + sans-serif typography.  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend
+- Express API that serves cakes data from a hardcoded array.  
+- Separation of concerns – clear routes for cakes and cart.  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Other
+- Designed as a portfolio project but extendable into a real bakery e-commerce site.  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Frontend:**  
+- React + TypeScript  
+- React Router  
+- TailwindCSS  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Backend:**  
+- Node.js + Express (no database, using in-memory data)  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Other Tools:**  
+- Vite (frontend build tool) 
+
+---
+
+## Project Structure
+
+sweet-magnolia-cakery/
+├── client/                # Frontend React app
+│   ├── public/            # Static assets
+│   ├── src/
+│   │   ├── assets/        # Images, fonts, etc.
+│   │   ├── components/    # Reusable UI components (Nav, Footer, IntroSection, etc.)
+│   │   ├── pages/         # Page-level components (Shop, Cart, etc.)
+│   │   ├── App.tsx        # App layout & routing
+│   │   ├── App.css        # Global styles
+│   │   ├── index.css      # Base styles
+│   │   └── main.tsx       # React entry point
+│   └── index.html         # Root HTML file
+│
+├── server/                # Backend Express app
+│   ├── src/
+│   │   ├── routes/        # API endpoints
+│   │   │   └── cakes.ts   # Cakes route
+│   │   └── index.ts       # Server entry
+│
+├── .gitignore
+├── eslint.config.js
+├── package-lock.json
+└── README.md
+
+---
+## Development Notes
+
+- Backend serves cake data from an array (no database used).  
+- Cart functionality is managed on the frontend with React Context.  
+- Shipping is currently mocked (set to free).  
+
+---
+
+## Future Enhancements
+
+- Connect a real database (SQLite/PostgreSQL).  
+- Add order checkout and payment integration (e.g., Stripe).  
+- Create an admin dashboard to add cakes dynamically.  
+- Add reviews and ratings.  
+- Deploy backend to a cloud host (e.g., Render/Heroku).  
+
+---
+
+## Motivation / Learning Goals
+
+This project was created as part of my software development studies.  
+The goal was to practise building a **full-stack web application** using React for the frontend and Express for the backend.  
+
+Key learning objectives:  
+- Implement clean and reusable React components.  
+- Use React Router for multi-page navigation.  
+- Manage global state with React Context (cart functionality).  
+- Build a simple backend API with Express.  
+- Connect frontend and backend together in a full-stack environment.  
+- Apply consistent design and styling with TailwindCSS. 
+---
+## License
+
+This project is for educational and portfolio purposes. Feel free to use as a reference, but not for commercial redistribution without permission.
+
+---
+
+## Screenshots
+
+### Main Page
+![Cake Details](./client/public/screenshots/main.png)
+
+### Shop Page
+![Shop Page](./client/public/screenshots/shop-page.png)
+
+### Cart Page
+![Cart Page](./client/public/screenshots/cart.png)
+
+
+
+
