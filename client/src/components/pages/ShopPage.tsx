@@ -101,7 +101,7 @@ export default function ShopPage() {
                   <img
                     src={cake.image}
                     alt={cake.name}
-                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02] bg-white"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </div>
               </Link>
@@ -116,7 +116,7 @@ export default function ShopPage() {
 
                 <button
                   onClick={() => setSelectedCake(cake)}
-                  className="mt-5 w-full rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white font-medium py-2.5 shadow hover:shadow-lg transition"
+                  className="mt-5 w-full rounded-full bg-gradient-to-b from-[#7daf94] to-[#7cb8b0] text-white font-medium py-2.5 shadow hover:shadow-lg transition"
                 >
                   Select &amp; Add to Cart
                 </button>
@@ -142,7 +142,7 @@ export default function ShopPage() {
                   onClick={() => setSelectedSize(s)}
                   className={`px-4 py-2 rounded-full border transition ${
                     selectedSize?.label === s.label
-                      ? "bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white shadow"
+                      ? "bg-gradient-to-b from-[#4fd28c] to-[#7cb8b0] text-white shadow"
                       : "bg-white border-gray-300 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
@@ -168,7 +168,7 @@ export default function ShopPage() {
                 <button
                   onClick={handleAddToCart}
                   disabled={!selectedSize}
-                  className="px-4 py-2 rounded-md bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white font-medium disabled:opacity-50"
+                  className="px-4 py-2 rounded-md bg-gradient-to-b from-[#5f8f73] to-[#4d8070] text-white font-medium disabled:opacity-50"
                 >
                   Add to Cart
                 </button>

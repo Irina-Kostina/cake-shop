@@ -28,43 +28,38 @@ export default function IntroSection() {
 
 
   return (
-    <section id="home" className="relative bg-gradient-to-b from-neutral-50 to-white py-16 sm:py-20">
-      {/* Background subtle dots pattern */}
-      <div className="absolute inset-0 flex justify-center overflow-hidden pointer-events-none">
-        <div className="w-full max-w-6xl">
-          <div className="grid grid-cols-12 gap-4 opacity-20">
-            {Array.from({ length: 60 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-2 w-2 rounded-full bg-[#e3a283]/30"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+    <section
+  id="home"
+  className="relative bg-[url('/cakes/image.jpg')] bg-cover bg-center py-16 sm:py-20"
+>
+  {/* Dark overlay for better text contrast */}
+  <div className="absolute inset-0 bg-black/70" />
 
-      {/* Content */}
-      <div className="relative mx-auto max-w-4xl px-4 text-center">
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-[#6a8a6a] tracking-wide">
-          SWEET MAGNOLIA <br /> CAKERY
-        </h1>
 
-        {/* Rotating subtitle with fade */}
-        <div className="mt-4 min-h-[2.5rem]">
-          <p
-            className={`text-lg sm:text-xl italic text-[#e3a283] transition-opacity duration-1000 ${
-              fade ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {phrases[index]}
-          </p>
-        </div>
 
-        <p className="mt-6 text-base sm:text-lg text-[#6a8a6a] leading-relaxed">
-          Handcrafted artisan cakes made with love, finest ingredients, and
-          botanical inspiration for life&apos;s most cherished moments
-        </p>
-      </div>
-    </section>
+  {/* Content */}
+  <div className="relative mx-auto max-w-4xl px-4 text-center text-white">
+    <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide drop-shadow-lg">
+      SWEET MAGNOLIA <br /> CAKERY
+    </h1>
+
+    {/* Rotating subtitle with fade */}
+    <div className="mt-4 min-h-[2.5rem]">
+      <p
+        className={`text-lg sm:text-xl italic text-[#e7e6fb] transition-opacity duration-1000 ${
+          fade ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {phrases[index]}
+      </p>
+    </div>
+
+    <p className="mt-6 text-base sm:text-lg leading-relaxed drop-shadow-md">
+      Handcrafted artisan cakes made with love, finest ingredients, and
+      botanical inspiration for life&apos;s most cherished moments
+    </p>
+  </div>
+</section>
+
   )
 }

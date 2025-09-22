@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 export default function App() {
   const location = useLocation()
   return (
-    <div className="min-h-screen w-full bg-[#ffdfc3] text-zinc-900">
+    <div className="min-h-screen w-full bg-[#f5f2ff] text-zinc-900">
       <Nav />
       <span id="home" className="block h-0" />
       <div className="pt-28">

@@ -6,13 +6,13 @@ export default function Navbar() {
   const { cart } = useCart()
   
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#f8f6f2]/90 backdrop-blur-sm shadow-sm">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#f5f2ff]/80 backdrop-blur-sm shadow-sm">
       {/* reduced vertical padding */}
       <div className="w-full px-8 py-1.5">
         <div className="flex items-center justify-between">
           {/* LOGO */}
           <div className="flex items-center">
-            <img src="/logo.png" alt="Sweet Magnolia Cakery Logo" className="h-28 w-auto" />
+            <img src="/logo2.png" alt="Sweet Magnolia Cakery Logo" className="h-28 w-auto" />
 
           </div>
 

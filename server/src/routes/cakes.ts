@@ -33,16 +33,16 @@ export type Cake = {
 const cakes: Cake[] = [
   {
     id: 1,
-    name: 'Mango Delight',
+    name: 'Mango-Lime Delight',
     slug: 'mango-delight',
-    image: '/cakes/mango_cake.png',
+    image: '/cakes/mango1.jpg',
     category: 'Core Flavours',
     price: 68,
     sizes: [
       { label: 'Medium', serves: 8, price: 68 },
       { label: 'Large',  serves: 12, price: 82 },
     ],
-    components: ['Mango mousse', 'Vanilla sponge', 'Mango compote'],
+    components: ['Mango mousse', 'Vanilla sponge', 'Lime compote'],
     allergens: ['Egg', 'Dairy', 'Gluten'],
     storage: 'Refrigeration required',
     expiry: 'Best consumed within 3–4 days',
@@ -52,7 +52,7 @@ const cakes: Cake[] = [
     id: 2,
     name: 'Peach & Sage Dream',
     slug: 'peach-sage-dream',
-    image: '/cakes/cream_cake.png',
+    image: '/cakes/peach.jpg',
     category: 'Core Flavours',
     price: 69,
     sizes: [
@@ -69,7 +69,7 @@ const cakes: Cake[] = [
     id: 3,
     name: 'Coffee Caramel Drip',
     slug: 'coffee-caramel-drip',
-    image: '/cakes/coffee_cake.png',
+    image: '/cakes/coffee.jpg',
     category: 'Core Flavours',
     price: 72,
     sizes: [
@@ -84,16 +84,16 @@ const cakes: Cake[] = [
   },
   {
     id: 4,
-    name: 'Lavender Whisper',
+    name: 'Lavender-Blueberry Whisper',
     slug: 'lavender-whisper',
-    image: '/cakes/lavander.png',
+    image: '/cakes/lav.jpg',
     category: 'Core Flavours',
     price: 65,
     sizes: [
       { label: 'Medium', serves: 8, price: 65 },
       { label: 'Large',  serves: 12, price: 79 },
     ],
-    components: ['Lavender mousse', 'Lemon curd', 'Vanilla sponge'],
+    components: ['Lavender mousse', 'Blueberry mousse', 'Lemon curd', 'Vanilla sponge'],
     allergens: ['Egg', 'Dairy', 'Gluten'],
     storage: 'Refrigeration required',
     expiry: 'Best consumed within 3–4 days',
@@ -103,7 +103,7 @@ const cakes: Cake[] = [
     id: 5,
     name: 'Honey Blossom',
     slug: 'honey-blossom',
-    image: '/cakes/honey_cake.png',
+    image: '/cakes/honey.jpg',
     category: 'Core Flavours',
     price: 65,
     sizes: [
@@ -120,7 +120,7 @@ const cakes: Cake[] = [
     id: 6,
     name: 'Vanilla Citrus Symphony',
     slug: 'vanilla-citrus-symphony',
-    image: '/cakes/vanilla.png',
+    image: '/cakes/lemon.jpg',
     category: 'Core Flavours',
     price: 59,
     sizes: [
@@ -137,7 +137,7 @@ const cakes: Cake[] = [
     id: 7,
     name: 'Tiramisu Temptation',
     slug: 'tiramisu-temptation',
-    image: '/cakes/tiramisu_cake.png',
+    image: '/cakes/tiramisu.jpg',
     category: 'Core Flavours',
     price: 75,
     sizes: [
@@ -152,16 +152,16 @@ const cakes: Cake[] = [
   },
   {
     id: 8,
-    name: 'Ube Velvet',
-    slug: 'ube-velvet',
-    image: '/cakes/ube_cake.png',
+    name: 'Red Velvet',
+    slug: 'red-velvet',
+    image: '/cakes/red-velvet.jpg',
     category: 'Core Flavours',
     price: 70,
     sizes: [
       { label: 'Medium', serves: 8, price: 70 },
       { label: 'Large',  serves: 12, price: 84 },
     ],
-    components: ['Ube mousse', 'Cream cheese spread', 'Ube sponge'],
+    components: ['Cocoa-infused sponge', 'Cream cheese frosting', 'Velvet crumb coating'],
     allergens: ['Egg', 'Dairy', 'Gluten', 'Gelatine'],
     storage: 'Refrigeration required',
     expiry: 'Best consumed within 4 days',
@@ -171,7 +171,7 @@ const cakes: Cake[] = [
     id: 9,
     name: 'Chocolate Flower',
     slug: 'chocolate-flower',
-    image: '/cakes/chocolate.png',
+    image: '/cakes/choco.jpg',
     category: 'Core Flavours',
     price: 65,
     sizes: [
@@ -188,7 +188,7 @@ const cakes: Cake[] = [
     id: 10,
     name: 'Velvet Oreo Bliss',
     slug: 'velvet-oreo-bliss',
-    image: '/cakes/oreo.png',
+    image: '/cakes/oreo.jpg',
     category: 'Core Flavours',
     price: 70,
     sizes: [
@@ -205,7 +205,7 @@ const cakes: Cake[] = [
     id: 11,
     name: 'Green Harmony',
     slug: 'green-harmony',
-    image: '/cakes/matcha.png',
+    image: '/cakes/matcha.jpg',
     category: 'Core Flavours',
     price: 70,
     sizes: [
