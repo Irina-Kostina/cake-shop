@@ -41,6 +41,7 @@ This project was developed as part of my software development studies to demonst
 
 ## Project Structure
 
+```
 sweet-magnolia-cakery/
 ├── client/                # Frontend React app
 │   ├── public/            # Static assets
@@ -64,6 +65,8 @@ sweet-magnolia-cakery/
 ├── eslint.config.js
 ├── package-lock.json
 └── README.md
+```
+
 
 ---
 ## Development Notes
@@ -96,10 +99,6 @@ Key learning objectives:
 - Build a simple backend API with Express.  
 - Connect frontend and backend together in a full-stack environment.  
 - Apply consistent design and styling with TailwindCSS. 
----
-## License
-
-This project is for educational and portfolio purposes. Feel free to use as a reference, but not for commercial redistribution without permission.
 
 ---
 
@@ -113,6 +112,20 @@ This project is for educational and portfolio purposes. Feel free to use as a re
 
 ### Cart Page
 ![Cart Page](./client/public/screenshots/cart.png)
+
+---
+## Assets / Images
+
+All cake images used in this project were downloaded from stock image sources.  
+They are used here for **educational and portfolio purposes only** and are not intended for commercial use.  
+
+If this project is expanded into a real e-commerce site, original photography or properly licensed images would be required.  
+
+---
+
+## License
+
+This project is for educational and portfolio purposes. Feel free to use as a reference, but not for commercial redistribution without permission.
 
 
 
