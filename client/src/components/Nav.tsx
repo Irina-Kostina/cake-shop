@@ -25,11 +25,7 @@ export default function Navbar() {
           </nav>
 
           {/* CART BUTTON */}
-          {/* <a href="#cart" className="relative flex flex-col items-center justify-center bg-[#f2ac8c] text-white rounded-full px-6 py-3 shadow-md hover:brightness-105">
-            <span className="font-semibold leading-none">Cart</span>
-            <span className="text-xs bg-[#7e9b7d] text-white rounded-full px-2 py-0.5 mt-1">0</span>
-          </a> */}
-          <Link
+           <Link
             to="/cart"
             className="relative flex items-center px-3 py-1 rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white shadow hover:shadow-md transition"
           >

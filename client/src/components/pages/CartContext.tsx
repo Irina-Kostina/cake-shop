@@ -15,18 +15,19 @@ type CartContextType = {
   addToCart: (item: CartItem) => void
   removeFromCart: (slug: string, size: string) => void
   clearCart: () => void
+  updateQuantity: (slug: string, size: string, quantity: number) => void
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>(() => {
-    // ✅ Load from localStorage on first render
+    // Load from localStorage on first render
     const saved = localStorage.getItem("cart")
     return saved ? JSON.parse(saved) : []
   })
 
-  // ✅ Save to localStorage whenever cart changes
+  // Save to localStorage whenever cart changes
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart))
   }, [cart])
@@ -55,8 +56,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart([])
   }
 
+  function updateQuantity(slug: string, size: string, quantity: number) {
+    setCart((prev) =>
+      prev.map((c) =>
+        c.slug === slug && c.size === size
+          ? { ...c, quantity: Math.max(1, quantity) } // prevents going below 1
+          : c
+      )
+    )
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity }}
+    >
       {children}
     </CartContext.Provider>
   )
