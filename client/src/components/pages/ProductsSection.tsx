@@ -1,8 +1,15 @@
-// src/components/ProductsSection.tsx
+import { Link } from "react-router-dom";
+
 export default function ProductsSection() {
   return (
-    <section className="w-full bg-[#fafafa] py-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section
+      className="relative w-full bg-cover bg-center bg-no-repeat py-20 min-h-[600px]"
+      style={{ backgroundImage: "url('/cakes/bg-cake.jpg')" }}
+    >
+      {/* Optional overlay for readability */}
+      <div className="absolute inset-0 bg-white/80"></div>
+
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT IMAGE / CARD */}
         <div className="rounded-2xl bg-[#f7b599] shadow-md p-10 flex flex-col items-center justify-center text-center text-white">
@@ -17,13 +24,13 @@ export default function ProductsSection() {
 
         {/* RIGHT CONTENT */}
         <div>
-          <h2 className="text-4xl font-serif font-bold text-[#6a8a6a] mb-8">
+          <h2 className="text-4xl font-serif font-bold text-[#4a654a] mb-8">
             Our Products
           </h2>
 
           <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
             <div>
-              <h3 className="text-2xl font-semibold text-[#6a8a6a] mb-2">
+              <h3 className="text-2xl font-semibold text-[#3d573d] mb-2">
                 Crafted with Care
               </h3>
               <p>
@@ -34,7 +41,7 @@ export default function ProductsSection() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-[#6a8a6a] mb-2">
+              <h3 className="text-2xl font-semibold text-[#3d573d] mb-2">
                 Nature’s Finest Ingredients
               </h3>
               <p>
@@ -45,7 +52,7 @@ export default function ProductsSection() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-[#6a8a6a] mb-2">
+              <h3 className="text-2xl font-semibold text-[#3d573d] mb-2">
                 Moments Made Sweeter
               </h3>
               <p>
@@ -56,12 +63,13 @@ export default function ProductsSection() {
             </div>
           </div>
 
-          <a
-            href="/products"
+          {/* Link to /shop */}
+          <Link
+            to="/shop"
             className="inline-block mt-8 px-6 py-3 bg-[#f7b599] text-white font-medium rounded-full shadow-md hover:bg-[#e99d7f] transition"
           >
             Explore our delicious range →
-          </a>
+          </Link>
         </div>
       </div>
     </section>
