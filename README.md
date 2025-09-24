@@ -38,6 +38,29 @@ This project was developed as part of my software development studies to demonst
 - Vite (frontend build tool) 
 
 ---
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have installed:
+- [Node.js](https://nodejs.org/) (>= 18)  
+- [npm](https://www.npmjs.com/)  
+
+### Installation
+
+1. Clone the repo:
+   ```bash
+   git clone git@github.com:Irina-Kostina/cake-shop.git
+   cd sweet-magnolia-cakery
+  
+2. Install dependencies: 
+    ```bash
+    npm install
+
+3. Start the frontend:
+    ```bash
+    npm run dev
+
+---
 
 ## Project Structure
 
@@ -67,67 +90,6 @@ sweet-magnolia-cakery/
 └── README.md
 ```
 
----
-# 🍰 Sweet Magnolia Cakery
-
-A full-stack e-commerce web application for a botanical-inspired cake shop.  
-Built with **React, TypeScript, Node.js, Express, and TailwindCSS**.  
-
-This project was developed as part of my software development studies to demonstrate skills in **frontend design, backend API development, and user experience design**.  
-
----
-
-## ✨ Features
-
-### Frontend
-- 📦 **Shop page** – Browse cakes in a responsive grid layout.  
-- 📝 **Cake details** – Each cake includes image, description, size options, and add-to-cart functionality.  
-- 🛒 **Cart page** – Add, remove, and update cake quantities with subtotal and total cost calculation.  
-- ❤️ **Favourites section** – Save cakes to favourites for quick access.  
-- 📱 **Responsive design** – Optimised for desktop, tablet, and mobile.  
-- 🎨 **Custom styling** – Botanical colour palette (sage green, peach, cream) with serif + sans-serif typography.  
-
-### Backend
-- 🔌 **Express API** that serves cakes data from a hardcoded array.  
-- 🌐 **Separation of concerns** – clear routes for cakes and cart.  
-
-### Other
-- 📧 Contact form with EmailJS integration.  
-- 🌱 Designed as a portfolio project but extendable into a real bakery e-commerce site.  
-
----
-
-## 🛠️ Tech Stack
-
-**Frontend:**  
-- React + TypeScript  
-- React Router  
-- TailwindCSS  
-
-**Backend:**  
-- Node.js + Express (no database, using in-memory data)  
-
-**Other Tools:**  
-- Vite (frontend build tool)  
-- GitHub Pages (frontend deployment)  
-- EmailJS (form submission)  
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-Make sure you have installed:
-- [Node.js](https://nodejs.org/) (>= 18)  
-- [npm](https://www.npmjs.com/)  
-
-### Installation
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/sweet-magnolia-cakery.git
-   cd sweet-magnolia-cakery
-  ```
 ---
 ## Development Notes
 
