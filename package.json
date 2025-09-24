@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
-    "dev:client": "vite",
-    "dev:server": "tsx watch server/src/index.ts",
-    "build": "rimraf dist build-server && vite build && tsc -p tsconfig.server.json",
-    "start": "node build-server/server/src/index.js"
-  },
+  "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+  "dev:client": "vite",
+  "dev:server": "tsx watch server/src/index.ts",
+  "build": "rimraf dist build-server && vite build && tsc -p tsconfig.server.json",
+  "start": "node build-server/server/src/index.js",
+  "knex": "knex"
+},
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
