@@ -17,6 +17,4 @@ app.use(express.json())
 app.use('/api/cakes', cakesRouter)
 
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`)
-})
+export default app

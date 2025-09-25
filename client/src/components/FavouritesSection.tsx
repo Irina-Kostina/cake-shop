@@ -1,42 +1,19 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "./pages/CartContext"
-
-type SizeOption = {
-  label: string
-  serves: number
-  price: number
-}
-
-type Cake = {
-  id: number
-  name: string
-  slug: string
-  price: number
-  image: string
-  sizes: SizeOption[]
-}
+import { mockCakes, Cake, SizeOption } from "./pages/mockCakes"
 
 export default function FavouritesSection() {
   const [cakes, setCakes] = useState<Cake[]>([])
   const { addToCart } = useCart()
 
-  // modal state
   const [selectedCake, setSelectedCake] = useState<Cake | null>(null)
   const [selectedSize, setSelectedSize] = useState<SizeOption | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
+  // ✅ Load from mock data
   useEffect(() => {
-    async function fetchCakes() {
-      try {
-        const res = await fetch("/api/cakes")
-        const data = await res.json()
-        setCakes(data)
-      } catch (err) {
-        console.error("Failed to fetch cakes", err)
-      }
-    }
-    fetchCakes()
+    setCakes(mockCakes)
   }, [])
 
   const favouriteIds = [1, 3, 5, 7]
@@ -69,7 +46,6 @@ export default function FavouritesSection() {
       aria-labelledby="favourites-heading"
       className="mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-14"
     >
-      {/* Heading */}
       <div className="text-center mb-8 sm:mb-12">
         <h2
           id="favourites-heading"
@@ -79,14 +55,12 @@ export default function FavouritesSection() {
         </h2>
       </div>
 
-      {/* Grid of cards */}
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {cakes
           .filter((cake) => favouriteIds.includes(cake.id))
           .map((cake) => (
             <li key={cake.id}>
               <div className="group h-full rounded-2xl bg-white/90 ring-1 ring-[#cfd8cf] shadow-sm hover:shadow-md transition-shadow">
-                {/* Image */}
                 <Link to={`/shop/${cake.slug}`}>
                   <div className="overflow-hidden rounded-t-2xl bg-neutral-100 aspect-[4/3]">
                     <img
@@ -98,7 +72,6 @@ export default function FavouritesSection() {
                   </div>
                 </Link>
 
-                {/* Content */}
                 <div className="p-4 sm:p-5">
                   <h3 className="font-medium text-neutral-900 leading-snug">
                     {cake.name}
@@ -107,7 +80,6 @@ export default function FavouritesSection() {
                     From <span className="font-semibold">${cake.price}</span>
                   </p>
 
-                  {/* Button opens modal */}
                   <button
                     onClick={() => setSelectedCake(cake)}
                     className="mt-5 w-full rounded-full bg-gradient-to-b from-[#7daf94] to-[#7cb8b0] text-white font-medium py-2.5 shadow hover:shadow-lg transition"
@@ -120,7 +92,6 @@ export default function FavouritesSection() {
           ))}
       </ul>
 
-      {/* Modal */}
       {selectedCake && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl shadow-lg max-w-md w-full p-6">
@@ -128,7 +99,6 @@ export default function FavouritesSection() {
               Choose size for {selectedCake.name}
             </h2>
 
-            {/* Sizes */}
             <div className="flex flex-wrap gap-3">
               {selectedCake.sizes.map((s, i) => (
                 <button
@@ -145,12 +115,10 @@ export default function FavouritesSection() {
               ))}
             </div>
 
-            {/* Success message */}
             {successMessage && (
               <p className="mt-4 text-green-600 font-medium">{successMessage}</p>
             )}
 
-            {/* Actions */}
             <div className="mt-6 flex justify-end gap-3">
               <button
                 onClick={closeModal}

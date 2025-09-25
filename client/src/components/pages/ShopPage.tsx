@@ -1,20 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "./CartContext"
+import { mockCakes, Cake } from "./mockCakes"
 
 type SizeOption = {
   label: string
   serves: number
   price: number
-}
-
-type Cake = {
-  id: number
-  name: string
-  slug: string
-  price: number
-  image: string
-  sizes: SizeOption[]
 }
 
 export default function ShopPage() {
@@ -29,20 +21,15 @@ export default function ShopPage() {
   const [selectedSize, setSelectedSize] = useState<SizeOption | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
+  // ✅ Load from mock (no API)
   useEffect(() => {
-    async function load() {
-      try {
-        const res = await fetch("/api/cakes")
-        if (!res.ok) throw new Error(`HTTP error ${res.status}`)
-        const data = await res.json()
-        setCakes(data)
-      } catch (err: any) {
-        setError(err.message ?? "Unknown error")
-      } finally {
-        setLoading(false)
-      }
+    try {
+      setCakes(mockCakes)
+    } catch (err: any) {
+      setError(err.message ?? "Failed to load cakes")
+    } finally {
+      setLoading(false)
     }
-    load()
   }, [])
 
   if (loading) {
