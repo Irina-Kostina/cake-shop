@@ -59,7 +59,7 @@ export default function CakeDetailsPage() {
   if (error) return <p className="p-6 text-red-500">{error}</p>
   if (!cake) return <p className="p-6">Cake not found</p>
 
-  // ✅ Safe Add to Cart
+  // Safe Add to Cart
   function handleAddToCart() {
     if (!cake || !selectedSize) return
     addToCart({
@@ -75,7 +75,7 @@ export default function CakeDetailsPage() {
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-12">
-      {/* ✅ Breadcrumb */}
+      {/* Breadcrumb */}
       <nav className="text-sm text-gray-800 mb-6 flex items-center gap-2">
         <Link to="/" className="hover:underline">Cakery Auckland</Link>
         <span>›</span>
