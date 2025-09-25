@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 export default function Footer() {
   return (
     <footer className="bg-[#f5f5f5] border-t border-zinc-200 mt-16">

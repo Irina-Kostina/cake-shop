@@ -11,7 +11,7 @@ export default function FavouritesSection() {
   const [selectedSize, setSelectedSize] = useState<SizeOption | null>(null)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
-  // ✅ Load from mock data
+  // Load from mock data
   useEffect(() => {
     setCakes(mockCakes)
   }, [])

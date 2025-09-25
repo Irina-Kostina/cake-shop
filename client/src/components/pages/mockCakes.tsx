@@ -1,3 +1,5 @@
+// For Vercel deployment, all backend data was replaced with mock data in the frontend
+// Backend is disabled in deployment. Data is mocked in the frontend for preview purposes
 export type SizeOption = {
   label: string
   serves: number

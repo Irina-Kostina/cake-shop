@@ -5,6 +5,21 @@ Built with **React, TypeScript, Node.js, Express, and TailwindCSS**.
 
 This project was developed as part of my software development studies to demonstrate skills in **frontend design, backend API development, database, and user experience design**.  
 
+This is my very first **end-to-end full-stack project**.  
+I spent countless hours building it — learning, experimenting, and struggling along the way.  
+
+I’ll admit, I’m not 100% happy with the design yet, but I’m **proud of what I achieved**: a working full-stack application with authentication, API, database, and a responsive frontend.  
+
+For me, this project represents more than code — it’s proof that I can bring an idea to life from start to finish.  
+
+**Live Demo:** [https://your-deployment-url.vercel.app](https://cake-shop-mauve.vercel.app/)  
+
+---
+
+> **Note:**  
+> For deployment on Vercel, the app has been temporarily converted to **frontend-only mode**, using hardcoded mock data instead of the full backend/API.  
+> The backend code (Express server, database setup, and routes) is still available in the repository for fullstack usage or local development.
+
 ---
 
 ## Features
@@ -102,6 +117,23 @@ sweet-magnolia-cakery/
 - Backend serves cake data from a database (managed with Knex migrations and seeds).
 - Cart functionality is managed on the frontend with React Context.  
 - Shipping is currently mocked (set to free).  
+
+This project was originally developed as a fullstack application using:
+- Frontend: React + Vite
+- Backend: Node.js + Express + SQLite (via Knex)
+
+However, for deployment on Vercel, the app was temporarily switched to frontend-only mode to support static hosting.
+
+---
+## Live Version on Vercel
+
+Due to Vercel's limitations with server-side Node/Express APIs in non-pro plans, the live version includes only the frontend, with all cake data loaded from a hardcoded mock array instead of a live database/API.
+
+- Cake data is stored directly in the frontend
+- All backend functionality is disabled in the deployed version
+- Fullstack Code Still Included
+
+The full Express API, database migrations, and seed scripts are still available in the codebase (/server/ folder) and can be run locally.
 
 ---
 
