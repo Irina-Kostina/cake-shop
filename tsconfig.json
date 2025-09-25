@@ -10,5 +10,5 @@
     "types": ["node"],
     "baseUrl": "."
   },
-  "include": ["client/**/*", "server/**/*", "src", "src"]
+  "include": ["client/**/*", "server/**/*", "src"]
 }
