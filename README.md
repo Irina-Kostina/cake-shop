@@ -3,7 +3,7 @@
 A full-stack e-commerce web application for a botanical-inspired cake shop.  
 Built with **React, TypeScript, Node.js, Express, and TailwindCSS**.  
 
-This project was developed as part of my software development studies to demonstrate skills in **frontend design, backend API development, and user experience design**.  
+This project was developed as part of my software development studies to demonstrate skills in **frontend design, backend API development, database, and user experience design**.  
 
 ---
 
@@ -13,12 +13,15 @@ This project was developed as part of my software development studies to demonst
 - Shop page – Browse cakes in a responsive grid layout.  
 - Cake details – Each cake includes image, description, size options, and add-to-cart functionality.  
 - Cart page – Add, remove, and update cake quantities with subtotal and total cost calculation.  
-- Favourites section – Save cakes to favourites for quick access.  
+- Favourites section – View the most popular cakes on the main page and add them to the cart directly for quick access.
 - Responsive design – Optimised for desktop, tablet, and mobile.  
 - Custom styling – Botanical colour palette (sage green, peach, cream) with serif + sans-serif typography.  
+- User authentication with Auth0 (login, signup, logout). 
 
 ### Backend
-- Express API that serves cakes data from a hardcoded array.  
+- Express API that serves cakes data from a database.  
+- Database schema managed with **Knex migrations**.  
+- Initial cake data populated using **Knex seeds**.  
 - Separation of concerns – clear routes for cakes and cart.  
 
 ### Other
@@ -29,16 +32,18 @@ This project was developed as part of my software development studies to demonst
 **Frontend:**  
 - React + TypeScript  
 - React Router  
-- TailwindCSS  
+- TailwindCSS
+- Auth0 (user authentication) 
 
 **Backend:**  
-- Node.js + Express (no database, using in-memory data)  
+- Node.js + Express
+- SQLite + Knex (database with migrations and seeds)    
 
 **Other Tools:**  
 - Vite (frontend build tool) 
 
 ---
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 Make sure you have installed:
@@ -79,6 +84,7 @@ sweet-magnolia-cakery/
 │   └── index.html         # Root HTML file
 │
 ├── server/                # Backend Express app
+│   ├── db/                # Database setup (Knex migrations and seeds)
 │   ├── src/
 │   │   ├── routes/        # API endpoints
 │   │   │   └── cakes.ts   # Cakes route
@@ -93,7 +99,7 @@ sweet-magnolia-cakery/
 ---
 ## Development Notes
 
-- Backend serves cake data from an array (no database used).  
+- Backend serves cake data from a database (managed with Knex migrations and seeds).
 - Cart functionality is managed on the frontend with React Context.  
 - Shipping is currently mocked (set to free).  
 
@@ -101,11 +107,11 @@ sweet-magnolia-cakery/
 
 ## Future Enhancements
 
-- Connect a real database (SQLite/PostgreSQL).  
 - Add order checkout and payment integration (e.g., Stripe).  
 - Create an admin dashboard to add cakes dynamically.  
 - Add reviews and ratings.  
-- Deploy backend to a cloud host (e.g., Render/Heroku).  
+
+
 
 ---
 
@@ -127,10 +133,13 @@ Key learning objectives:
 ## Screenshots
 
 ### Main Page
-![Cake Details](./client/public/screenshots/main.png)
+![Main Page](./client/public/screenshots/main.png)
 
 ### Shop Page
 ![Shop Page](./client/public/screenshots/shop-page.png)
+
+### Cake Details Page
+![Cake Details Page](./client/public/screenshots/cake-details.png)
 
 ### Cart Page
 ![Cart Page](./client/public/screenshots/cart.png)

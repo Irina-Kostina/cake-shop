@@ -33,7 +33,7 @@ export default function IntroSection() {
   className="relative bg-[url('/cakes/image.jpg')] bg-cover bg-center py-16 sm:py-20"
 >
   {/* Dark overlay for better text contrast */}
-  <div className="absolute inset-0 bg-black/70" />
+  <div className="absolute inset-0 bg-black/50" />
 
 
 
