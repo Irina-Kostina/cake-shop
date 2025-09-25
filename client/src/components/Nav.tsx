@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from './pages/CartContext'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function Navbar() {
   const { cart } = useCart()
-  
+  const { loginWithRedirect, logout, isAuthenticated, user, isLoading } = useAuth0()
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#f5f2ff]/80 backdrop-blur-sm shadow-sm">
       <div className="w-full px-8 py-1.5">
@@ -29,23 +31,45 @@ export default function Navbar() {
           {/* RIGHT SIDE: Auth + Cart */}
           <div className="flex items-center gap-4">
             {/* AUTH BUTTONS */}
-            <Link
-              to="/login"
-              className="px-4 py-1.5 rounded-full border border-[#7e9b7d] text-[#3a4a3f] hover:bg-[#7e9b7d] hover:text-white transition text-sm"
-            >
-              Log In
-            </Link>
-            <Link
-              to="/signup"
-              className="px-4 py-1.5 rounded-full bg-[#7e9b7d] text-white hover:bg-[#5d7b5c] transition text-sm"
-            >
-              Sign Up
-            </Link>
+            {!isLoading && !isAuthenticated && (
+              <>
+                <button
+                  onClick={() => loginWithRedirect()}
+                  className="px-4 py-1.5 rounded-full border border-[#7e9b7d] text-[#3a4a3f] hover:bg-[#7e9b7d] hover:text-white transition text-sm"
+                >
+                  Log In
+                </button>
+                <button
+                  onClick={() =>
+                    loginWithRedirect({ authorizationParams: { screen_hint: 'signup' } })
+                  }
+                  className="px-4 py-1.5 rounded-full bg-[#7e9b7d] text-white hover:bg-[#5d7b5c] transition text-sm"
+                >
+                  Sign Up
+                </button>
+              </>
+            )}
+
+            {isAuthenticated && (
+              <>
+                <span className="text-sm text-[#3a4a3f]">
+                  Hi, {user?.given_name || user?.nickname || user?.email}
+                </span>
+                <button
+                  onClick={() =>
+                    logout({ logoutParams: { returnTo: window.location.origin } })
+                  }
+                  className="px-4 py-1.5 rounded-full border border-[#7e9b7d] text-[#3a4a3f] hover:bg-[#7e9b7d] hover:text-white transition text-sm"
+                >
+                  Log Out
+                </button>
+              </>
+            )}
 
             {/* CART BUTTON */}
             <Link
               to="/cart"
-              className="relative flex items-center px-3 py-1 rounded-full bg-gradient-to-b from-[#efb39a] to-[#e3a283] text-white shadow hover:shadow-md transition"
+              className="relative flex items-center px-3 py-1 rounded-full bg-gradient-to-b from-[#D39245] to-[#e3a283] text-white shadow hover:shadow-md transition"
             >
               <span>Cart</span>
 

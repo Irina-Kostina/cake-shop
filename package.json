@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
-  "dev:client": "vite",
-  "dev:server": "tsx watch server/src/index.ts",
-  "build": "rimraf dist build-server && vite build && tsc -p tsconfig.server.json",
-  "start": "node build-server/server/src/index.js",
-  "knex": "knex"
-},
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "vite",
+    "dev:server": "tsx watch server/src/index.ts",
+    "build": "rimraf dist build-server && vite build && tsc -p tsconfig.server.json",
+    "start": "node build-server/server/src/index.js",
+    "knex": "knex"
+  },
   "dependencies": {
+    "@auth0/auth0-react": "^2.5.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "knex": "^3.1.0",
